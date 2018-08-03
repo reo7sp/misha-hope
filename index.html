@@ -25,7 +25,7 @@
         <div class="controls">
             <p>
                 <label for="font-size-control">Размер текста:</label>
-                <input type="range" id="font-size-control" min="16" max="512" value="140">
+                <input type="range" id="font-size-control" min="16" max="512" value="120">
             </p>
             <p>
                 <label for="font-height-control">Высота букв:</label>
@@ -36,6 +36,11 @@
     </div>
 
     <style>
+        @font-face {
+            font-family: 'GothaProBol';
+            src: url('GothaProBol.otf');
+        }
+
         body {
             font-family: sans-serif;
             font-size: 16px;
@@ -77,9 +82,9 @@
             text-align: center;
             vertical-align: middle;
             color: #789cb2;
-            font-family: 'PT Sans', sans-serif;
+            font-family: 'GothaProBol', 'PT Sans', sans-serif;
             font-weight: 600;
-            font-size: 140px;
+            font-size: 120px;
             white-space: nowrap;
             overflow: visible;
         }
