@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>H O P E</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="center-container">
+            <img class="misha" src="misha.jpg">
+            <div class="misha-text-container">
+                <div class="misha-text" id="misha-text" contenteditable="true">DE WEI</div>
+            </div>
+        </div>
+        <div class="intro">
+            <h1>Генератор мемов с жизнеутверждающим Мишей.</h1>
+            <p>&nbsp;</p>
+            <p>Попробуйте щелкнуть на надпись и вбить в поле примеры: «МЕТА&#8209;МЕТА», «НЕ&nbsp;ГУМАНИТАРИЙ» или «СЕГОДНЯ&nbsp;ХОРОШИЙ&nbsp;ДЕНЬ».</p>
+            <p>Сохранение картинки никак не реализовано, поэтому скриншотьте результат.</p>
+            <p>&nbsp;</p>
+            <p>Если у вас диагональ экрана меньше 13', то&nbsp;сорре, у вас страница нормально выглядеть не будет. <span style="color: #888">(а вы тогда этот текст наверно и не увидете, хах)</span></p>
+        </div>
+        <div class="controls">
+            <p>
+                <label for="font-size-control">Размер текста:</label>
+                <input type="range" id="font-size-control" min="16" max="512" value="140">
+            </p>
+            <p>
+                <label for="font-height-control">Высота букв:</label>
+                <input type="range" id="font-height-control" min="1" max="2" value="1" step="0.01">
+            </p>
+            <p style="color: #888">Лайфхак: как перетащили ползунок мышкой, можно стрелочками на клавиатуре поаккуратнее его подвигать.</p>
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #222222;
+            margin: 0;
+        }
+
+        p {
+            line-height: 1.7em;
+        }
+
+        .container {
+            width: 100vw;
+            position: relative;
+            padding: 16px;
+        }
+
+        .center-container {
+            width: 528px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .misha {
+            width: 100%;
+        }
+
+        .misha-text-container {
+            position: absolute;
+            top: 650px;
+            left: 0;
+            width: 100%;
+            height: 140px;
+            line-height: 140px;
+        }
+
+        .misha-text {
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+            color: #789cb2;
+            font-family: 'PT Sans', sans-serif;
+            font-weight: 600;
+            font-size: 140px;
+            white-space: nowrap;
+            overflow: visible;
+        }
+
+        .intro {
+            position: absolute;
+            top: 32px;
+            left: 32px;
+            width: 384px;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 48px;
+            right: 96px;
+            width: 320px;
+        }
+    </style>
+
+    <script>
+        var mishaTextEl = document.querySelector('#misha-text');
+        var fontSizeControlEl = document.querySelector('#font-size-control');
+        var fontHeightControlEl = document.querySelector('#font-height-control');
+
+        fontSizeControlEl.addEventListener('input', function (e) {
+            mishaTextEl.style.fontSize = e.target.value + 'px';
+        });
+        fontHeightControlEl.addEventListener('input', function (e) {
+            mishaTextEl.style.transform = 'scaleY(' + e.target.value + ')';
+        });
+    </script>
+    
+</body>
+
+</html>
